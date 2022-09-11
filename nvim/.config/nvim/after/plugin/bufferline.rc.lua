@@ -1,6 +1,11 @@
 local status, bufferline = pcall(require, "bufferline")
 if (not status) then return end
 
+local highlights = {}
+local status2, catppuccin = pcall(require, "catppuccin")
+if status then
+    highlights = require("catppuccin.groups.integrations.bufferline").get()
+end
 
 bufferline.setup {
     options = {
@@ -27,5 +32,6 @@ bufferline.setup {
         show_buffer_close_icons = false,
         always_show_bufferline = true,
         separator_style = "padded_slant",
-    }
+    },
+    highlights = highlights
 }

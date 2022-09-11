@@ -91,6 +91,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 -- sumneko_lua
+-- TODO(alvaro): Make lua ignore plugins that we don't control
 lspconfig.sumneko_lua.setup {
     -- Lua LSP configuration (inspired by the one in tjdevries/nlua.nvim
     on_attach = on_attach_general,
@@ -106,6 +107,8 @@ lspconfig.sumneko_lua.setup {
             },
             workspace = {
                 -- Make the server aware of Neovim runtime files
+                -- TODO(alvaro): test the alternative:
+                -- library = vim.api.nvim_get_runtime_file("", true)
                 library = {
                     vim.fn.expand("$VIMRUNTIME/lua"),
                     vim.fn.expand("$VIMRUNTIME/lua/lsp"),

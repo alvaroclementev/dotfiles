@@ -67,6 +67,8 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'ayu-theme/ayu-vim'
 " As a light scheme
 Plug 'ericbn/vim-solarized'
+" Testing this
+Plug 'catppuccin/nvim', { 'as': 'catppuccin', 'do': 'CatppuccinCompile' }
 
 " TreeSitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}

@@ -7,8 +7,3 @@ end
 function buf_show_clients()
     print(vim.inspect(vim.lsp.buf_get_clients()))
 end
-
-
--- fidget.nvim
--- progress bar for the LSP
-require('fidget').setup {}
